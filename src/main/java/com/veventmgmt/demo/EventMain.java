@@ -8,6 +8,5 @@ public class EventMain {
         System.out.println("Completed");
         SpringApplication.run(EventMain.class, args);
         
-    
     }
 }
