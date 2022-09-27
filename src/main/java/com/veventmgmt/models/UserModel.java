@@ -1,7 +1,7 @@
-
+import javax.persistence.Entity;
+import javax.persistence.Id;
 @Entity
 public class UserModel {
-    
     @Id
     String email;
     String password;
