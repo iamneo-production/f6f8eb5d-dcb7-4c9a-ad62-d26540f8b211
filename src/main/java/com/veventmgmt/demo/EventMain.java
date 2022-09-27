@@ -6,5 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EventMain {
     public static void main(String[]args){
         SpringApplication.run(EventMain.class, args);
+
+        System.out.println("Completed");
     }
 }
