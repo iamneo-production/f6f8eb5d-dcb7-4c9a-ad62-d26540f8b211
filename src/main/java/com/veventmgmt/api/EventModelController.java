@@ -1,4 +1,4 @@
-package main.java.com.veventmgmt.models;
+package main.java.com.veventmgmt.api;
 import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,11 +11,11 @@ public class EventModelController {
         return "<h1>hello</h1>";
     }
 
-    @GetMapping(value="/models")
-    public ResponseEntity<MenuModel> fetch() {
-        MenuModel mm = new MenuModel();
-        return new ResponseEntity<MenuModel>(mm, HttpStatus.OK)
-    }
+    // @GetMapping(value="/models")
+    // public ResponseEntity<MenuModel> fetch() {
+    //     MenuModel mm = new MenuModel();
+    //     return new ResponseEntity<MenuModel>(mm, HttpStatus.OK);
+    // }
 
     //tetdddsgfghfhgfhhghjgjgjteteteteabced12345
     
