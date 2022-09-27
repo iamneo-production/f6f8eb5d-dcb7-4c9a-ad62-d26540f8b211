@@ -2,7 +2,8 @@ EventModel.class
 MenuModel.class
 LoginModel.class
 ThemeModel.class
-main/java/com/veventmgmt/demo/EventMain.class
+main/java/com/veventmgmt/models/EventMain.class
 UserModel.class
 AddOnModel.class
 AdminModel.class
+main/java/com/veventmgmt/models/EventModelController.class
