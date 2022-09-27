@@ -1,3 +1,6 @@
+
+package com.veventmgmt.models;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 @Entity

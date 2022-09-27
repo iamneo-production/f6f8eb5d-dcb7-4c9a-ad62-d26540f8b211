@@ -1,4 +1,4 @@
-package main.java.com.veventmgmt.api;
+package com.veventmgmt.api;
 import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.web.bind.annotation.RequestMapping;

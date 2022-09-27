@@ -1,4 +1,6 @@
 
+package com.veventmgmt.models;
+
 import java.time.LocalDateTime;
 import java.util.Date;
 
