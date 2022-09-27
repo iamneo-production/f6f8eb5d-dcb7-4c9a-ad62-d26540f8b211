@@ -11,6 +11,11 @@ public class EventModelController {
         return "<h1>hello</h1>";
     }
 
+    @GetMapping(value="/models")
+    public ResponseEntity<MenuModel> fetch() {
+        MenuModel mm = new MenuModel();
+        return new ResponseEntity<MenuModel>(mm, HttpStatus.OK)
+    }
 
     //tet
     
