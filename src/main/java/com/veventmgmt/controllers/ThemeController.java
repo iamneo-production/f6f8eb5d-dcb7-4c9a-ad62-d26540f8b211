@@ -15,17 +15,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class ThemeController {
     
-    public void addTheme(ThemeModel data){
-        return ;
+    @Autowired
+    private ThemeService themeService;
+
+
+    @RequestMapping(method=RequestMethod.POST,value="/addTheme")
+    public void addTheme(@RequestBody ThemeModel data){
+        themeService.addTheme(data);
     }
-    public ThemeModel getTheme(int themeId){
-        return null;
+    @RequestMapping("/getTheme/{id}")
+    public ThemeModel getTheme(@PathVariable int themeId){
+        return themeService.getTheme(themeId);
     }
-    public void editTheme(int themeId){
-        return ;
+    @RequestMapping(method=RequestMethod.PUT,value="/editTheme")
+    public void editTheme(@PathVariable int themeId,@RequestBody ThemeModel t){
+        themeService.editTheme(themeId, t);;
     }
-    public void deleteTheme(int themeId){
-        return ;
+    @RequestMapping(method=RequestMethod.DELETE,value="/deleteTheme")
+    public void deleteTheme(@PathVariable int themeId){
+        themeService.deleteTheme(themeId);
     }
 
 }

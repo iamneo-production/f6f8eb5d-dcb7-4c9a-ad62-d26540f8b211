@@ -17,17 +17,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class UserController {
     
-    public void addUser(UserModel data){
-        return;
+    @Autowired
+    private AuthService authService;
+    @RequestMapping(method=RequestMethod.POST,value="/addUser")
+    public void addUser(@RequestBody UserModel data){
+        authService.addUser(data);
     }
-    public List<UserModel> getUser(String userId){
-        return null;
+    @RequestMapping("/getUser/{id}")
+    public UserModel getUser(@PathVariable String userId){
+        return authService.getUser(userId);
     }
-    public void editUser(String userId){
-        return;
+    @RequestMapping(method=RequestMethod.PUT,value="/editUser/{id}")
+    public void editUser(@PathVariable String userId,@RequestBody UserModel data){
+        authService.editUser(userId, data);
     }
-    public void deleteUser(String userId){
-        return;
+    @RequestMapping(method=RequestMethod.DELETE,value="/editTheme/{id}")
+    public void deleteUser(@PathVariable String userId){
+        authService.deleteUser(userId);
     }
 
 }

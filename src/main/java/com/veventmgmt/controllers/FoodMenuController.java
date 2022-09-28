@@ -15,17 +15,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class FoodMenuController {
 
-    public void addMenu(MenuModel data){
-        return ;
+    @Autowired
+    private FoodService foodService;
+    @RequestMapping(method=RequestMethod.POST,value="/addMenu")
+    public void addMenu(@RequestBody MenuModel data){
+        foodService.addMenu(data);
     }
-    public void editMenu(int menuId){
-        return ;
+    @RequestMapping(method=RequestMethod.PUT,value="/editMenu")
+    public void editMenu(@PathVariable int menuId,@RequestBody MenuModel data){
+        foodService.editMenu(menuId,data);
     }
-    public MenuModel getMenu(int menuId){
-        return null;
+    @RequestMapping(value="/getMenu")
+    public MenuModel getMenu(@PathVariable int menuId){
+        return foodService.getMenu(menuId);
     }
-    public void deleteMenu(int menuId){
-        return ;
+    @RequestMapping(method=RequestMethod.DELETE,value="/deleteMenu")
+    public void deleteMenu(@PathVariable int menuId){
+        foodService.deleteMenu(menuId);
     } 
 
 }
