@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import './style.css'
+import {BrowserRouter as Router,Switch,Route,Redirect,} from "react-router-dom"
+import {Link} from "react-router-dom";
+import './style.css';
 function RegistrationForm() {
     return(
       <div className="form">
@@ -24,11 +26,9 @@ function RegistrationForm() {
                   <label className="form__label" for="confirmPassword">Confirm Password </label>
                   <input className="form__input" type="password" id="confirmPassword" placeholder="Confirm Password"/>
               </div>
-          </div>
-          <div class="footer">
-              <button type="submit" class="btn">Register</button>
-          </div>
-      </div>      
+          </div>  
+          <div><p>Already a user scroll to signin</p></div>
+      </div>
     )       
 }
 export default RegistrationForm;

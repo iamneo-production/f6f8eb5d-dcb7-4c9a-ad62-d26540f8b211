@@ -1,6 +1,8 @@
 import Header from './header.js';
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import {BrowserRouter as Router,Switch,Route,Redirect,} from "react-router-dom"
+import {Link} from "react-router-dom";
 
 import "./styles.css";
 
@@ -73,6 +75,10 @@ function App1() {
         <div className="button-container">
           <input type="submit" />
         </div>
+        <div>
+        <p>new register here to create a new account</p>
+        
+      </div>
       </form>
     </div>
   );
@@ -83,6 +89,8 @@ function App1() {
         <div className="title">Sign In</div>
         {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
       </div>
+      
+
     </div>
   );
 }

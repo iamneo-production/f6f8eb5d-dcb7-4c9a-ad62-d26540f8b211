@@ -6,7 +6,8 @@ import App1 from './signin.js';
 function App() {
   return (
     <div className="App">
-      
+      <Header/>
+      <RegistrationForm/>
       <App1/>
     </div>
     
