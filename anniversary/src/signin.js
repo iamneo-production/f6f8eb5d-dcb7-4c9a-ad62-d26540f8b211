@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
-function App() {
+function App1() {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -87,4 +87,4 @@ function App() {
   );
 }
 
-export default App;
+export default App1;
