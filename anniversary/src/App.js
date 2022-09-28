@@ -12,25 +12,4 @@ function App() {
     
   );
 }
-export default App;
-/*
-import React from 'react';
-import ReactDOM from 'react-dom';
-import EventDashboard from './event-dashboard';
-import EventInvitees from './event-invitees';
-import LoginForm from './auth/login-form'
-
-
-class App extends React.Component
-{
-    render()
-    {
-        return (
-            <div>
-                <LoginForm />
-            </div>
-        )
-    }
-}
-
-ReactDOM.render(<App/>,document.getElementById("app"));*/
+export default App
