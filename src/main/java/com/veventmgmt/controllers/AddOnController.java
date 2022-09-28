@@ -3,23 +3,39 @@ package com.veventmgmt.controllers;
 import com.veventmgmt.models.*;
 import com.veventmgmt.repository.*;
 
+import com.veventmgmt.services.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public class AddOnController {
 
     @Autowired
-    private AddOnRepository addonobj;
-    
-    public void addAddon(AddOnModel data){
-        addonobj.save(data);
+    private AddOnService addonobj;
+
+    @RequestMapping(method=RequestMethod.POST,value="/addOn")
+    public void addAddon(@RequestBody AddOnModel data){
+        addonobj.addAddOn(data);
     }
-    public void editAddOn(int addonId,AddOnModel data){
-        addonobj.save(data);
+    @RequestMapping(method=RequestMethod.PUT,value="/addOn/{id}")
+    public void editAddOn(@PathVariable int addonId,@RequestBody AddOnModel data){
+        addonobj.editAddOn(addonId, data);;
     }
-    public AddOnModel getAddOn(int addOnId){
-        return addonobj.findById(addOnId).get();
+
+    @RequestMapping("/addOn/{id}")
+    public AddOnModel getAddOn(@PathVariable  int addOnId){
+        return addonobj.getAddOn(addOnId);
     }
-    public void deleteAddOn(int addOnId){
-		addonobj.remove(addonobj.findById(addOnId).get());
+
+    @RequestMapping(method=RequestMethod.DELETE,value="/addOn/{id}")
+    public void deleteAddOn(@PathVariable int addOnId){
+		//addonobj.remove(addonobj.findById(addOnId).get());
+        addonobj.deleteAddOn(addOnId);
     }
 
 }

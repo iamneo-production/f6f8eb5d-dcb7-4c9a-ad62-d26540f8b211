@@ -6,11 +6,16 @@ import javax.persistence.Id;
 @Entity
 public class UserModel {
     @Id
+	int uid;
     String email;
     String password;
     String username;
     String mobileNumber;
     String userRole;
+
+	public int getId(){
+		return this.uid;
+	}
 
     public String getEmail() {
 		return email;
